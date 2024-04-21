@@ -7,7 +7,7 @@ import sqlite3;
 
 # Connecting to temporal DB, if db does not exist, creates a new on directory.
 
-connection = sqlite3.connect('../mydb.sqlite');
+connection = sqlite3.connect('mydb.sqlite');
 
 # Creating a cursor object to execute
 # SQL queries on a database table
@@ -34,7 +34,7 @@ cursor.execute(create_table);
 
 
 # Opening the restaurantes.csv file
-file = open('../restaurantes.csv');
+file = open('restaurantes.csv');
 
 
 # Reading the contents of the 
