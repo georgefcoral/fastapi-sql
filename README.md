@@ -1,11 +1,16 @@
 ## Intelimetrica Project
 
+## Run on docker
+
+**`docker build -t restaurantscontainer .`**
+**`docker run -p 8000:8000 restaurantscontainer`**
+
 ## Instruccions for run locally
 
 ### Install dependencies
 
-> - **`python -m venv myenv`**
-> - **`source myenv/Scripts/activate`**
+- **`python -m venv myenv`**
+- **`source myenv/Scripts/activate`**
 
 - **`pip install fastapi`**
 - **`pip install uvicorn`**
