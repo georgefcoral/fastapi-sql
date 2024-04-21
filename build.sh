@@ -12,4 +12,3 @@ cd ./scripts
 python migrate_csv_to_sqlite.py
 
 cd ..
-uvicorn main:app --reload --port 5000
