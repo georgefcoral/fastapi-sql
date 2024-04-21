@@ -76,10 +76,17 @@ def getRestaurant(id: str) -> JSONResponse:
 
 @restaurant_router.post('/restaurants', tags=['restaurants'], response_model=dict, status_code=201)
 def createRestaurant(restaurant: Restaurant) -> JSONResponse:
+
+    if restaurant.lat > 90 or restaurant.lat < -90:
+        return JSONResponse(status_code=400, content=jsonable_encoder({"message": "latitude should be in the range of -90 to 90"}))
+    
+    if restaurant.lng > 180 or restaurant.lng < -180:
+        return JSONResponse(status_code=400, content=jsonable_encoder({"message": "longitude should be in the range of -180 to 180"}))
+    
     db = Session()
     restaurant.id = str(uuid.uuid4());
     RestaurantService(db).create(restaurant);
-    return JSONResponse(status_code=201, content={"message": "A restaurant has been created"});
+    return JSONResponse(status_code=201, content=jsonable_encoder(restaurant));
 
 
 @restaurant_router.put('/restaurants/{id}', tags=['restaurants'], response_model=dict, status_code=200)

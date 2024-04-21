@@ -11,8 +11,8 @@ class Restaurant(BaseModel):
     street: str
     city: str
     state: str
-    lat: float
-    lng: float
+    lat: float = Field(le=90 , ge=-90)
+    lng: float = Field(le=180 , ge=-180)
 
     model_config = {
         "json_scheme_extra": {
