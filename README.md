@@ -5,7 +5,7 @@ SQLAlchemy es un ORM (Object Relational Mapper) que permite trabajar con bases d
 
 > :bulb: Activar el entorno virtual
 > - **`python3 -m venv venv`**
-> - **`source venv/bin/activate`**
+> - **`source fastai-sql-enviroment/Scripts/activate`**
 
 
 ## Qué es un ORM?
